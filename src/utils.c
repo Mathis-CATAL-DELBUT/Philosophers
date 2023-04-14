@@ -6,7 +6,7 @@
 /*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:54:19 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/04/14 03:05:06 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/04/14 03:16:52 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ long long	get_time(void)
 	gettimeofday(&tv, NULL);
 	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
-
 
 void    ft_usleep(long time)
 {

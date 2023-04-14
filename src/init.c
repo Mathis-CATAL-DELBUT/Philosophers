@@ -6,7 +6,7 @@
 /*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:48:03 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/04/14 03:15:57 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/04/14 04:22:21 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 int	init_threads(t_data *data)
 {
-	int id_death;
-	int i;
+	pthread_t	id_death;
+	int			i;
 
 	i = -1;
 	while (++i < data->n_philo)
-	pthread_create(&data->philo[i].t_id, NULL, action_philo,
+		pthread_create(&data->philo[i].t_id, NULL, action_philo,
 				&data->philo[i]);
 	pthread_create(&id_death, NULL, ft_philo_death, data);
 	i = -1;
 	while (++i < data->n_philo)
 		pthread_join(data->philo[i].t_id, NULL);
-	pthread_join(ft_philo_death, NULL);
+	pthread_join(id_death, NULL);
+	printf("test\n");
 	return (0);
 }
 
 int	init_data_mutex_philo(t_data *data)
 {
-	int	i;
+	int i;
 
 	i = -1;
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->n_philo);

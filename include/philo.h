@@ -6,7 +6,7 @@
 /*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 11:15:33 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/04/14 03:09:19 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/04/14 04:11:08 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,14 @@ int					init_threads(t_data *data);
 //Routines
 void				*action_philo(void *arg);
 void				ft_print(t_philo *philo, char *str);
+void				*ft_philo_death(void *arg);
+int					chek_eat(t_data *data);
+int					cheak_death(t_data *data, int i);
+
+//Action Forks
+int					take_forks(t_philo *philo);
+void				unlock_forks(t_philo *philo);
+int					ft_eat(t_philo *philo);
 
 //Libft
 size_t				ft_strlen(const char *s);
