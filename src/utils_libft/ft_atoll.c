@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 09:52:09 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/03/26 23:27:46 by mcatal-d         ###   ########.fr       */
+/*   Created: 2023/04/13 23:13:38 by mcatal-d          #+#    #+#             */
+/*   Updated: 2023/04/13 23:13:46 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "philo.h"
 
-int	ft_atoi(const char *str)
+long long int	ft_atoll(const char *str)
 {
-	int		i;
-	int		neg;
-	long	n;
+	int i;
+	int neg;
+	long long int n;
 
 	i = 0;
 	neg = 1;
@@ -32,10 +32,9 @@ int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		n = n * 10 + (str[i] - 48);
-		if (n * neg < -2147483648)
+		if (n * neg < -92233720368.54775808 * 100000000
+        || n * neg > 92233720368.54775807 * 100000000)
 			return (0);
-		else if (n * neg > 2147483647)
-			return (-1);
 		i++;
 	}
 	return (n * neg);
