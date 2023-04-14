@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 02:54:19 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/04/14 03:05:06 by mcatal-d         ###   ########.fr       */
+/*   Created: 2022/11/07 15:00:16 by tedelin           #+#    #+#             */
+/*   Updated: 2023/04/14 03:09:02 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-long long	get_time(void)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	struct timeval	tv;
+	size_t	i;
 
-	gettimeofday(&tv, NULL);
-	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
-}
-
-
-void    ft_usleep(long time)
-{
-    long   start;
-
-    start = get_time();
-    while (get_time() - start < time)
-        usleep(100);
+	i = 0;
+	if (n == 0)
+		return (0);
+	while ((unsigned char)s1[i] == (unsigned char)s2[i] && s1[i]
+		&& s2[i] && i < n - 1)
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

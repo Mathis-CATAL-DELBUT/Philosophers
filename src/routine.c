@@ -6,7 +6,7 @@
 /*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:49:59 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/04/14 03:02:43 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/04/14 03:15:18 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void    ft_print(t_philo *philo, char *str)
     long long   time;
 
     pthread_mutex_lock(&philo->data->print);
-    if (philo->data->stop_flag == 1 && ft_strcmp(str, "is died"))
+    if (philo->data->stop_flag == 1 && ft_strncmp(str, "is died", 7))
     {
         pthread_mutex_unlock(&philo->data->print);
         return ;
     }
-    time = get_time()
+    time = get_time();
     pthread_mutex_lock(&philo->data->print);
     printf("%lld %d %s\n", time - philo->data->start, philo->id, str);
     pthread_mutex_unlock(&philo->data->print);

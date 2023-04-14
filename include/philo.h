@@ -6,7 +6,7 @@
 /*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 11:15:33 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/04/14 02:55:13 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/04/14 03:09:19 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int					parsing(int ac, char **av, t_data *data);
 
 //Utils
 long long			get_time(void);
+void				ft_usleep(long time);
 
 //Init
 int					init_data_mutex_philo(t_data *data);
@@ -59,10 +60,12 @@ int					init_threads(t_data *data);
 
 //Routines
 void				*action_philo(void *arg);
+void				ft_print(t_philo *philo, char *str);
 
 //Libft
 size_t				ft_strlen(const char *s);
 long long int		ft_atoll(const char *str);
 void				*ft_memset(void *s, int c, size_t n);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif /* PHILO_H */
