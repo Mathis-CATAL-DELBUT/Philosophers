@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatal-d <mcatal-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mcatal-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 02:48:03 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/04/14 04:56:18 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/04/17 21:58:10 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	init_data_mutex_philo(t_data *data)
 	return (init_threads(data));
 }
 
-void ft_free(t_data *data)
+void	ft_free(t_data *data)
 {
 	int	i;
 
